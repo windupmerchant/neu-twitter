@@ -1,0 +1,18 @@
+<h1>Here's what's goin' on:</h1>
+
+<table>
+
+<%= render 'new_story_form' if current_user %>
+
+<% @stories.each do |story| %>
+  <tr>
+    <td><%= "\"#{story.body}\"" %></td>
+    <td><%= " --" + story.user.name %></td>
+    <% if current_user == story.user %>
+      <td><%= link_to '  [Delete]', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
