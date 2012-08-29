@@ -1,7 +1,7 @@
 <div id="story_form">
   <%= form_for @new_story do |f| %>
     <% f.label :body %>
-    <%= f.text_field :body, placeholder: "What's goin' on, #{current_user.name}?" %><br />
+    <%= f.text_field :body, placeholder: "What's goin' on?" %><br />
     <%= f.submit %>
   <% end %>
 </div>

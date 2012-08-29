@@ -2,12 +2,12 @@
 
 <table>
 
-<%= render 'new_story_form' if current_user %>
+<%= render 'new_story_form' %>
 
 <% @stories.each do |story| %>
   <tr>
     <td><%= "\"#{story.body}\"" %></td>
-    <td><%= " --" + story.user.name %></td>
+    <td><%= link_to story.user.name, story.user %></td>
     <% if current_user == story.user %>
       <td><%= link_to '  [Delete]', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>

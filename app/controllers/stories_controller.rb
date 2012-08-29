@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_filter :authenticate_user!, only: :create
   # GET /stories
   # GET /stories.json
   def index

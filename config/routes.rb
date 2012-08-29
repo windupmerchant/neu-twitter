@@ -7,5 +7,5 @@ NeuTwitter::Application.routes.draw do
   
   root :to => "stories#index"
   devise_for :users
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index, :update]
 end
